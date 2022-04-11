@@ -15,15 +15,10 @@
 				<div class="grid">
 					<label for="range">
 						How many dice ?
-						<input type="range" min="0" max="9" value="1" id="range" name="range" />
+						<input type="number" min="1" max="9" value="1" id="range" name="range" />
 					</label>
 					<select name="dice" id="dice" required>
-						<option value="" selected >  
-							<?php isset( $_POST["dice"]) ?  
-								 $_POST["dice"] :
-								"Which kind of die ?" ;
-							?>  
-						</option>
+
 						<option value=4>d4</option>
 						<option value=6>d6</option>
 						<option value=8>d8</option>
