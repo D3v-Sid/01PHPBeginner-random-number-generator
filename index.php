@@ -33,9 +33,7 @@
 			</form>
 			<article>
 				You roll <?php echo $_POST["range"]; ?>  	d<?php echo $_POST["dice"]; ?>
-				and obtain...  <h3> <?php  HandfulOfDice($_POST["range"], $_POST["dice"]) ?>  ! </h3>	
-								<progress value="25" max="100"></progress>
-
+				and obtain...  <h3> <?php  HandfulOfDice($_POST["range"], $_POST["dice"]); ?>  ! </h3>		
 			</article>
 		</main>
 	</body>
@@ -59,13 +57,12 @@ class Dice{
 }
 
 function HandfulOfDice(int $n, int $type) {
-	$total=0;
+	$total=array();
 	for ($i=0; $i <$n ; $i++) { 
 		$die = new Dice($type);
-		$total += $die->rolledDice();
-	
+		array_push( $total, $die->rolledDice());
 	}
-	echo( $total);
+	echo( array_sum($total));
 }
 
 ?>
