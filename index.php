@@ -35,7 +35,8 @@
 				<input type="submit" value="Roll" />
 			</form>
 			<article>
-				You roll <?php echo $_POST["range"]; ?>  	d<?php echo $_POST["dice"]; ?>	and obtain <?php  new Dice( $_POST["dice"]) ?> 
+				You roll <?php echo $_POST["range"]; ?>  	d<?php echo $_POST["dice"]; ?>
+				and obtain <?php  HandfulOfDice($_POST["range"], $_POST["dice"]) ?> 
 				
 			
 			</article>
@@ -52,8 +53,22 @@ class Dice{
 	{
 		$this->type = $type;
 		$this->value = rand(1,$type);
-		echo( $this->value);
 	}
+
+	public function rolledDice(){
+		return (int) ($this->value);
+	}
+
+}
+
+function HandfulOfDice(int $n, int $type) {
+	$total=0;
+	for ($i=0; $i <$n ; $i++) { 
+		$die = new Dice($type);
+		$total += $die->rolledDice();
+	
+	}
+	echo( $total);
 }
 
 ?>
