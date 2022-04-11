@@ -17,14 +17,17 @@
 						How many dice ?
 						<input type="number" min="1" max="9" value= <?php  echo isset($_POST["range"])? $_POST["range"] : 1  ?>  id="range" name="range" />
 					</label>
-					<select name="dice" id="dice" required>
-						<option value=4>d4</option>
-						<option value=6>d6</option>
-						<option value=8>d8</option>
-						<option value=10>d10</option>
-						<option value=12>d12</option>
-						<option value=20>d20</option>
-					</select>
+
+					<label for ="dice">Which kind ?
+						<select name="dice" id="dice" required>
+							<option value=4>d4</option>
+							<option value=6>d6</option>
+							<option value=8>d8</option>
+							<option value=10>d10</option>
+							<option value=12>d12</option>
+							<option value=20>d20</option>
+						</select>
+					</label>
 				</div>
 				<input type="submit" value="Roll" />
 			</form>
