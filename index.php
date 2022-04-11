@@ -33,9 +33,9 @@
 			</form>
 			<article>
 				You roll <?php echo $_POST["range"]; ?>  	d<?php echo $_POST["dice"]; ?>
-				and obtain <?php  HandfulOfDice($_POST["range"], $_POST["dice"]) ?> 
-				
-			
+				and obtain...  <h3> <?php  HandfulOfDice($_POST["range"], $_POST["dice"]) ?>  ! </h3>	
+								<progress value="25" max="100"></progress>
+
 			</article>
 		</main>
 	</body>
@@ -69,3 +69,10 @@ function HandfulOfDice(int $n, int $type) {
 }
 
 ?>
+
+<style>
+	article{
+		margin-top: 0;
+		padding:  1rem;
+	}
+</style>
