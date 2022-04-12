@@ -1,6 +1,6 @@
 # Virtual Dice
 
-Random Number generator with PHO
+Random Number generator with PHP
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](http://forthebadge.com)
