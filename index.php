@@ -33,7 +33,19 @@
 			</form>
 			<article>
 				You roll <?php echo $_POST["range"]; ?>  	d<?php echo $_POST["dice"]; ?>
-				and obtain...  <h3> <?php  HandfulOfDice($_POST["range"], $_POST["dice"]); ?>  ! </h3>		
+				and obtain...  <h3> <?php  $total = HandfulOfDice($_POST["range"], $_POST["dice"]);   echo array_sum($total); ?>  ! </h3>
+				<ul>
+					<?php
+						foreach ($total as $value) {
+							echo "<li> $value </li>";
+						}
+
+					?>
+
+
+				</ul>
+				
+				
 			</article>
 		</main>
 	</body>
@@ -62,7 +74,7 @@ function HandfulOfDice(int $n, int $type) {
 		$die = new Dice($type);
 		array_push( $total, $die->rolledDice());
 	}
-	echo( array_sum($total));
+	return $total;
 }
 
 ?>
