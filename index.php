@@ -13,7 +13,6 @@
 	<body>
 		<main class="container">
 			<h1>Virtual Dice</h1>
-			<h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, dolores!</h5>
 			<form  method="post">
 				<div class="grid">
 					<label for="range">
@@ -32,11 +31,11 @@
 						</select>
 					</label>
 				</div>
-				<input type="submit" value="Roll" />
+				<input type="submit" value="Roll"  class="button"/>
 			</form>
 			<article>
-				You roll <?php echo $_POST["range"]; ?>  	d<?php echo $_POST["dice"]; ?>
-				and obtain...  <h3> <?php  $total = HandfulOfDice($_POST["range"], $_POST["dice"]);   echo array_sum($total); ?>  ! </h3>
+				You roll <?php echo $_POST["range"]; ?> d<?php echo $_POST["dice"]; ?>
+and obtain...  <h1> <?php  $total = HandfulOfDice($_POST["range"], $_POST["dice"]);   echo array_sum($total); ?>  ! </h1>
 				<ul>
 					<?php
 						foreach ($total as $value) {
@@ -88,6 +87,22 @@ function HandfulOfDice(int $n, int $type) {
 ?>
 
 <style>
+	.button{
+  		background-color: #1a75ff !important;
+	}
+	.button:hover{
+		background-color:#80b3ff !important;
+
+	}
+
+	h1{
+		max-height: 1rem;
+	}
+
+	.container{
+		height: 100vh !important;
+	}
+
 	article{
 		margin-top: 0;
 		padding:  1rem;
