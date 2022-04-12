@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
 		<link rel="stylesheet" href="css/pico.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ShimilSAbraham/Cube.CSS@45d9c3f/cube.css">
+
 		<title>Virtual Dice</title>
 	</head>
 	<body>
@@ -21,7 +23,7 @@
 					<label for ="dice">Which kind ?
 						<select name="dice" id="dice" required>
 							<option value=4>d4</option>
-							<option value=6>d6</option>
+							<option value=6 selected>d6</option>
 							<option value=8>d8</option>
 							<option value=10>d10</option>
 							<option value=12>d12</option>
@@ -37,9 +39,13 @@
 				<ul>
 					<?php
 						foreach ($total as $value) {
-							echo "<li> $value </li>";
+							echo "		
+							<div class='cube'>
+								<div class='front blue-l f-fly'></div>
+								<div class='side blue-d s-fly'></div>
+								<div class='top blue t-fly' >  <span> $value  </span> </div>
+							</div>";
 						}
-
 					?>
 
 
@@ -48,6 +54,7 @@
 				
 			</article>
 		</main>
+
 	</body>
 </html>
 
@@ -84,4 +91,32 @@ function HandfulOfDice(int $n, int $type) {
 		margin-top: 0;
 		padding:  1rem;
 	}
+	ul{
+		display: flex;
+		flex-direction: row;
+		gap:1rem;
+		flex-wrap: wrap;
+	}
+	li{
+		list-style: none !important;
+		border: 1px solid black;
+		border-radius: 10%;
+		padding: 1.5rem 2rem;
+		background: white;
+
+	}
+
+	.top{
+		text-align: center;
+	}
+
+	span{
+		display: block;
+		font-size: 3rem;
+		color: white;
+		text-align: center;
+		transform: rotate(180deg);
+	}
+
+
 </style>
